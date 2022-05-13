@@ -31,19 +31,25 @@ whenever something can have several values, use a dict.
 
 # print(countMatches([["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], "color", "silver"))
 
-def countMatches1(items: list[list[str]], ruleKey: str, ruleValue: str) -> int:
-    rules = {"0":"type", "1":"color", "2":"name"}
+# def countMatches1(items: list[list[str]], ruleKey: str, ruleValue: str) -> int:
+#     rules = {"0":"type", "1":"color", "2":"name"}
     
-    count = 0
+#     count = 0
     
-    for key, value in rules.items():
-        if value == ruleKey:
-            for lst in items:
-                if lst[int(key)] == ruleValue:
-                    count += 1
-    return count
+#     for key, value in rules.items():
+#         if value == ruleKey:
+#             for lst in items:
+#                 if lst[int(key)] == ruleValue:
+#                     count += 1
+#     return count
 
-print(countMatches1([["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], "color", "silver"))
+# print(countMatches1([["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], "color", "silver"))
+
+#
+
+#
+# ruleIndex = ['type', 'color', 'name'].index(ruleKey)
+# return sum(map(lambda x: x == ruleValue, [item[ruleIndex] for item in items]))
 
             
 
