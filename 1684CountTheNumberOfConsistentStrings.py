@@ -5,7 +5,11 @@ from tkinter import S
 
 
 def countConsistentStrings(allowed: str, words: list[str]) -> int:
-   print(sum([1 for element in [[char in word for char in allowed] for word in words] if len(element) == sum(element)]))
+   count = 0
+   for word in words:
+       if len(word) == len(set(word + allowed)): count += 1
+    
+    return word
 
 
 

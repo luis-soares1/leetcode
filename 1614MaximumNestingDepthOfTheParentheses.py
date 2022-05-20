@@ -1,26 +1,39 @@
+"""
+my solution
+basically if "(", adds one point, ")" removes a point.
+As when -1 happens, it will never be a point in which holder will be max, 
+so no need for max = holder in that condition.
+
+What I learned from the best solution:
+
+Using max instead of if, like this:
+
+   def maxDepth(self, s):
+        res = cur = 0
+        for c in s:
+            if c == '(':
+                cur += 1
+                res = max(res, cur)
+            if c == ')':
+                cur -= 1
+        return res
+"""
+
 def maxDepth(s: str) -> int:
-    
-    max = 0
+    max_num = 0
     holder = 0
-    
+
     for c in s:
         if c == "(":
-            print(c, "upper------------")
             holder += 1
-            print(holder)
-            if holder > max:
-                max = holder
+            max_num = max(holder, max)
         elif c == ")":
-            print(c, "lower")
             holder -= 1
-        else: max = max
     return max
         
 
 
 
 
-s1 = "(1+(2*3)+((8)/4))+1"
-s2 = "(1)+((2))+(((3)))"
 
-print(maxDepth(s1), "testee")
+
